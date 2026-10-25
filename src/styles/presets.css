@@ -1,0 +1,61 @@
+/*
+ * Preset palettes. Each block sets the variables the theme maps to.
+ * Pick one with `site.preset` in src/config/site.ts.
+ */
+
+:root,
+[data-preset="paper"] {
+  /* Paper, warm, editorial, terracotta accent. */
+  --bg: #fbf8f3;
+  --bg-soft: #f3ede3;
+  --fg: #26221c;
+  --muted: #6b6155;
+  --accent: #b4531f;
+  --accent-fg: #ffffff;
+  --line: #e5dbcc;
+
+  --font-display-stack: "Source Serif 4 Variable", Georgia, serif;
+  --font-body-stack: "Inter Variable", system-ui, sans-serif;
+}
+
+[data-preset="xalvane"] {
+  /* Xalvane: ink, bone, muted gold, moss. */
+  --bg: #080b12;
+  --bg-soft: #0e1624;
+  --fg: #f2ead8;
+  --muted: #a7adba;
+  --accent: #d2ad63;
+  --accent-fg: #080b12;
+  --line: #263143;
+
+  --font-display-stack: "Source Serif 4 Variable", Georgia, serif;
+  --font-body-stack: "Inter Variable", system-ui, sans-serif;
+}
+
+[data-preset="workshop"] {
+  /* Workshop, dark charcoal with an amber accent. */
+  --bg: #17191c;
+  --bg-soft: #212529;
+  --fg: #f2f3f4;
+  --muted: #a9b0b7;
+  --accent: #f5a623;
+  --accent-fg: #17191c;
+  --line: #2f353b;
+
+  --font-display-stack: "Space Grotesk Variable", system-ui, sans-serif;
+  --font-body-stack: "Inter Variable", system-ui, sans-serif;
+}
+
+[data-preset="coast"] {
+  /* Coast, sea greens on pale sand. */
+  --bg: #f2f7f5;
+  --bg-soft: #e4efea;
+  --fg: #14312c;
+  --muted: #55706a;
+  --accent: #0e7c6b;
+  --accent-fg: #ffffff;
+  --line: #cfe2db;
+
+  --font-display-stack: "Space Grotesk Variable", system-ui, sans-serif;
+  --font-body-stack: "Inter Variable", system-ui, sans-serif;
+}

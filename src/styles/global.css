@@ -1,0 +1,177 @@
+/* Fonts: self-hosted via Fontsource. Browsers only fetch the faces in use. */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/space-grotesk";
+
+@import "tailwindcss";
+@import "./presets.css";
+
+/* Map Tailwind colours to the active preset's variables, so every component
+   uses semantic classes (bg-bg, text-fg, bg-accent) and follows the preset. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-line: var(--line);
+
+  --font-display: var(--font-display-stack);
+  --font-body: var(--font-body-stack);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html[data-preset="xalvane"] body {
+    background-image:
+      radial-gradient(900px 600px at 82% -10%, rgba(210, 173, 99, 0.08), transparent 60%),
+      radial-gradient(700px 500px at 0% 45%, rgba(93, 122, 99, 0.08), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body-stack);
+    /* The quality gate asks for good Core Web Vitals, reserve text space early. */
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display-stack);
+    text-wrap: balance;
+  }
+
+  /* WCAG 2.2 AA: a visible focus ring on everything keyboard-reachable. */
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+}
+
+@layer components {
+  .container-page {
+    margin-inline: auto;
+    max-width: 72rem;
+    padding-inline: 1.25rem;
+  }
+
+  .section-pad {
+    padding-block: 4.5rem;
+  }
+
+  @media (min-width: 48rem) {
+    .section-pad {
+      padding-block: 6.5rem;
+    }
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* WCAG 2.2 target size (2.5.8): min 24px, buttons are 48px+. */
+    min-height: 3rem;
+    padding-inline: 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 150ms ease,
+      transform 150ms ease;
+  }
+
+  .button-primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  .button-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  .button-primary:disabled {
+    opacity: 0.55;
+    transform: none;
+    filter: none;
+    cursor: not-allowed;
+  }
+
+  .button-secondary {
+    border: 1px solid var(--line);
+    color: var(--fg);
+    background: transparent;
+  }
+
+  .button-secondary:hover {
+    background: var(--bg-soft);
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--bg-soft);
+    padding: 1.75rem;
+  }
+
+  /* Skip link: hidden until focused, then a real visible target. */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 50;
+    background: var(--accent);
+    color: var(--accent-fg);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* Respect people who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .prose-xalvane p {
+    line-height: 1.75;
+  }
+
+  .prose-xalvane h2 {
+    margin-top: 1.5rem;
+    color: var(--fg);
+  }
+
+  .prose-xalvane a {
+    color: var(--accent);
+  }
+}

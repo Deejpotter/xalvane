@@ -1,0 +1,26 @@
+# Render Blueprint for a client shop. In the Render dashboard: New → Blueprint,
+# pick this repo. Values marked sync: false are asked for once and kept in Render.
+services:
+  - type: web
+    name: xalvane
+    # Built from the Dockerfile so Render, Coolify and local builds match.
+    # Render can't change runtime on an existing service: if a Node service
+    # was already created from this file, delete it and create it again.
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free # Sleeps when idle. Change to starter (US$7/month) before launch.
+    branch: main
+    autoDeployTrigger: commit
+    healthCheckPath: /api/health
+    envVars:
+      # The public site URL, e.g. https://shop.example.com (or the onrender.com
+      # address until the domain is connected). Used for canonical URLs, the
+      # sitemap and Stripe redirects.
+      - key: NEXT_PUBLIC_BASE_URL
+        sync: false
+      # Stripe SECRET key (sk_live_… or sk_test_…). Server-side only.
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      # Reserved for the order-fulfilment webhook (see README). Not read yet.
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false

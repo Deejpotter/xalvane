@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#1b2a23"/>
+  <circle cx="660" cy="120" r="180" fill="#d2ad63" opacity=".05"/>
+  
+      <path d="M228 188 L318 152 L482 152 L572 188 L672 292 L594 364 L552 316 L552 668 L248 668 L248 316 L206 364 L128 292 Z" fill="#5d7a63"/>
+      <path d="M318 152 C338 226 462 226 482 152 C446 118 354 118 318 152Z" fill="#5d7a63" stroke="#f2ead8" stroke-width="4" opacity=".9"/>
+      <path d="M350 208 L350 284 M450 208 L450 284" stroke="#f2ead8" stroke-width="6" opacity=".55"/>
+      <path d="M290 500 L510 500 L510 610 L290 610 Z" fill="none" stroke="#f2ead8" stroke-width="5" opacity=".38"/>
+  <g transform="translate(400 380) scale(0.88)">
+    <g>
+      <ellipse cx="0" cy="16" rx="72" ry="92" fill="#f2ead8"/>
+      <path d="M-72 -18 C-74 -74 -34 -100 0 -108 C34 -100 74 -74 72 -18 C52 -44 36 -54 0 -54 C-36 -54 -52 -44 -72 -18Z" fill="#5d7a63"/>
+      <circle cx="-28" cy="0" r="20" fill="#070a10"/>
+      <circle cx="28" cy="0" r="20" fill="#070a10"/>
+      <circle cx="-28" cy="0" r="7" fill="#d2ad63"/>
+      <circle cx="28" cy="0" r="7" fill="#d2ad63"/>
+      <path d="M-10 30 L0 42 L10 30" fill="#c86a3e"/>
+      <path d="M-46 64 C-20 80 20 80 46 64" fill="none" stroke="#070a10" stroke-width="4"/>
+    </g></g>
+       <text x="400" y="722" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#f2ead8" letter-spacing="6" opacity=".8">XALVANE</text>
+</svg>
